@@ -31,7 +31,7 @@ function timeToWordsBrazilianPortuguese(number) {
         if (unidade === 0) {
             return dezenas[dezena];
         } else {
-            return dezenas[dezena] + (unidade !== 1 ? " e " + unidades[unidade] : unidades[unidade]);
+            return dezenas[dezena] + (unidade !== 1 ? " e " + unidades[unidade] : " e " + unidades[unidade]);
         }
     }
 }
