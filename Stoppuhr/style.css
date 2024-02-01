@@ -1,0 +1,144 @@
+:root {
+  --border-style: 2px solid black;
+}
+
+html {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.3rem;
+
+  cursor: wait;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+}
+
+#background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.grainy-overlay {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: 21px 21px; /* Adjust the size of the grains */
+  opacity: 0.1; /* Adjust the opacity of the grains */
+  animation: grainy-animation 5s infinite;
+}
+
+@keyframes grainy-animation {
+  from,
+  to {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 5px 5px;
+  }
+}
+
+#stopwatch {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 3fr;
+
+  border: var(--border-style);
+}
+
+#title {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+
+  border-bottom: var(--border-style);
+
+  display: flex;
+  align-items: center;
+
+  letter-spacing: 0.2rem;
+
+  background-color: bisque;
+}
+
+#title h1 {
+  margin-left: 1rem;
+}
+
+#time {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 1rem;
+
+  background-color: rgba(255, 255, 255, 0.65);
+}
+
+#time hr {
+  width: 35%;
+}
+
+#buttons {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+
+  border-left: var(--border-style);
+
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  background-color: black;
+}
+
+#buttons button {
+  border: var(--border-style);
+  border-radius: 50%;
+
+  padding: 0.5rem;
+
+  cursor: pointer;
+}
+
+#buttons button:hover {
+  background-color: black;
+  color: white;
+  border-color: red;
+}
+
+#start {
+  background-color: lightgreen;
+}
+
+#pause {
+  background-color: lightslategray;
+}
+
+#reset {
+  background-color: lightcoral;
+}
+
+.square {
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-justify: center;
+}
